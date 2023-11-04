@@ -28,8 +28,8 @@ switch (currentCompany) {
 
 const client = new Client(
   factory,
-  LandTransportType.CAR,
-  AircraftTransportType.HELICOPTER
+  LandTransportType.SCOOTER,
+  AircraftTransportType.DRONE
 );
 
 client.startRoute();

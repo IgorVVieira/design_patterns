@@ -1,9 +1,11 @@
 import Airplane from "../aerial/airplane";
+import Drone from "../aerial/drone";
 import Helicopter from "../aerial/helicopter";
 import IAircraft from "../aerial/interfaces/aircraft.interface";
 import Car from "../land/car";
 import ILandVehicle from "../land/interfaces/land.interface";
 import Motorcycle from "../land/motorcycle";
+import Scooter from "../land/scooter";
 import {
   AircraftTransportType,
   ITransportFactory,
@@ -17,6 +19,8 @@ export default class UberTransport implements ITransportFactory {
         return new Car();
       case LandTransportType.MOTORCYCLE:
         return new Motorcycle();
+      case LandTransportType.SCOOTER:
+        return new Scooter();
       default:
         return new Car();
     }
@@ -28,6 +32,8 @@ export default class UberTransport implements ITransportFactory {
         return new Airplane();
       case AircraftTransportType.HELICOPTER:
         return new Helicopter();
+      case AircraftTransportType.DRONE:
+        return new Drone();
       default:
         return new Airplane();
     }
