@@ -5,3 +5,4 @@ import "./solid/dip";
 import "./patterns/factory-method";
 import "./patterns/abstract-factory";
 import "./patterns/builder";
+import "./patterns/adapter";
