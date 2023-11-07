@@ -10,10 +10,15 @@ const vehicle = new Vehicle();
 const vehicleBuilder = new VehicleBuilder(vehicle);
 const director = new Director(vehicleBuilder);
 
-director.construcSedanCar();
+director.constructSedanCar();
 console.log(vehicleBuilder.getProduct());
 
 vehicleBuilder.reset();
 
-director.construcTruckCar();
+director.constructTruckCar();
+console.log(vehicleBuilder.getProduct());
+
+vehicleBuilder.reset();
+
+director.constructMotorcycle();
 console.log(vehicleBuilder.getProduct());

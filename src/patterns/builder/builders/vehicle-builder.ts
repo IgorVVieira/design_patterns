@@ -19,6 +19,10 @@ export default class VehicleBuilder implements IBuider {
   }
 
   setSeats(seats: number): void {
+    if (seats > 1 && this.vehicle.type === Type.MOTORCYCLE) {
+      this.vehicle.seats = 1;
+      return;
+    }
     this.vehicle.seats = seats;
   }
 
@@ -31,6 +35,10 @@ export default class VehicleBuilder implements IBuider {
   }
 
   setWheel(wheel: Wheel[]): void {
+    if (this.vehicle.type === Type.MOTORCYCLE && wheel.length > 2) {
+      this.vehicle.addWheel(wheel.slice(0, 2));
+      return;
+    }
     this.vehicle.addWheel(wheel);
   }
 

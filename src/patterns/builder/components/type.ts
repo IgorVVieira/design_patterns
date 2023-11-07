@@ -4,6 +4,7 @@ enum Type {
   SUV = "SUV",
   PICKUP_TRUCK = "PICKUP_TRUCK",
   TRUCK = "TRUCK",
+  MOTORCYCLE = "MOTORCYCLE",
 }
 
 export default Type;
