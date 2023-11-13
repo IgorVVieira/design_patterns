@@ -7,3 +7,4 @@ import "./patterns/abstract-factory";
 import "./patterns/builder";
 import "./patterns/adapter";
 import "./patterns/bridge";
+import "./patterns/chain-of-responsability";
