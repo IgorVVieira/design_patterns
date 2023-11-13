@@ -8,11 +8,14 @@ import readline from "readline";
 import CheckUserMiddleware from "./middlewares/check-user.middleware";
 import Server from "./servers/server";
 import CheckPermissionMiddleware from "./middlewares/check-permission.middleware";
+import CheckWeakPasswordMiddleware from "./middlewares/check-weak-password.middleware";
 
 console.log("\n\n---------- Chain of Responsability ----------");
 
 const middleware = new CheckUserMiddleware();
-middleware.linkWith(new CheckPermissionMiddleware());
+const weakPassMiddleware = new CheckWeakPasswordMiddleware();
+middleware.linkWith(weakPassMiddleware);
+weakPassMiddleware.linkWith(new CheckPermissionMiddleware());
 const server = new Server(middleware);
 
 function setPrompt() {
